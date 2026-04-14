@@ -5,6 +5,7 @@ import BusinessTypes from "@/components/BusinessTypes";
 import FeatureGrid from "@/components/FeatureGrid";
 import MarketplaceSection from "@/components/MarketplaceSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
+import FAQSection from "@/components/FAQSection";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <FeatureGrid />
       {/* <MarketplaceSection /> */}
       <TestimonialsSection />
+      <FAQSection />
 
       {/* Final CTA Section */}
       <section className="py-24 md:py-48 bg-white text-center">
