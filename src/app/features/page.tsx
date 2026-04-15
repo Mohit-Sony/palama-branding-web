@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import FeaturesHero from "@/components/features/FeaturesHero";
+import OnlineBookingSection from "@/components/features/OnlineBookingSection";
 
 export const metadata: Metadata = {
   title: "Features | Palama — Everything You Need to Run Your Business",
@@ -11,6 +12,8 @@ export default function FeaturesPage() {
   return (
     <div className="flex flex-col w-full">
       <FeaturesHero />
+      <OnlineBookingSection />
     </div>
   );
 }
+
