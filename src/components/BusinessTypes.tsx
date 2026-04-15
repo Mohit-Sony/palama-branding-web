@@ -23,20 +23,24 @@ const row2 = [
 ];
 
 const RowItem = ({ item }: { item: { name: string, image: string } }) => (
-  <div className="px-2 md:px-3 lg:px-4">
-    <Link href="#" className="relative block h-[180px] w-[280px] md:h-[220px] md:w-[320px] lg:h-[240px] lg:w-[350px] shrink-0 overflow-hidden rounded-[20px] group shadow-sm hover:shadow-xl transition-all duration-300">
-      <img 
-        src={item.image} 
-        alt={item.name} 
-        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" 
+  <div className="px-1.5 sm:px-2 md:px-3">
+    <Link
+      href="#"
+      className="relative block shrink-0 overflow-hidden rounded-[14px] sm:rounded-[18px] md:rounded-[20px] group shadow-sm hover:shadow-xl transition-all duration-300"
+      style={{ height: 'var(--card-h)', width: 'var(--card-w)' }}
+    >
+      <img
+        src={item.image}
+        alt={item.name}
+        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
       />
-      <div className="absolute inset-0 z-10 flex flex-col justify-end bg-gradient-to-t from-black/80 via-black/20 to-transparent p-4 md:p-5">
-        <div className="flex flex-row items-center justify-between gap-2">
-          <span className="text-white font-semibold text-lg md:text-xl tracking-tight">
+      <div className="absolute inset-0 z-10 flex flex-col justify-end bg-gradient-to-t from-black/80 via-black/20 to-transparent p-3 sm:p-4 md:p-5">
+        <div className="flex flex-row items-center justify-between gap-1">
+          <span className="text-white font-semibold text-sm sm:text-base md:text-lg tracking-tight leading-tight">
             {item.name}
           </span>
-          <div className="bg-white/20 backdrop-blur-md rounded-full p-2 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">
-            <ChevronRight className="w-5 h-5 text-white" />
+          <div className="bg-white/20 backdrop-blur-md rounded-full p-1.5 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100 shrink-0">
+            <ChevronRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 text-white" />
           </div>
         </div>
       </div>
@@ -46,18 +50,61 @@ const RowItem = ({ item }: { item: { name: string, image: string } }) => (
 
 export default function BusinessTypes() {
   return (
-    <section className="py-24 md:py-32 bg-white overflow-hidden">
-      <div className="max-w-[1240px] mx-auto mb-16 px-6 text-center">
-        <h2 className="text-4xl md:text-[56px] font-bold text-palama-navy leading-[1.1] tracking-tight">
+    <section className="py-14 sm:py-20 md:py-32 bg-white overflow-hidden">
+      <div className="max-w-[1240px] mx-auto mb-10 sm:mb-12 md:mb-16 px-4 sm:px-6 text-center">
+        <h2 className="text-[26px] sm:text-4xl md:text-5xl lg:text-[56px] font-bold text-palama-navy leading-[1.1] tracking-tight">
           A platform suitable for all
         </h2>
       </div>
 
-      <div className="relative w-full flex flex-col gap-6 md:gap-8 pb-10">
-        
+      {/* CSS custom properties for card sizes at each breakpoint */}
+      <style dangerouslySetInnerHTML={{__html: `
+        :root {
+          --card-h: 140px;
+          --card-w: 185px;
+        }
+        @media (min-width: 480px) {
+          :root {
+            --card-h: 160px;
+            --card-w: 220px;
+          }
+        }
+        @media (min-width: 768px) {
+          :root {
+            --card-h: 200px;
+            --card-w: 290px;
+          }
+        }
+        @media (min-width: 1024px) {
+          :root {
+            --card-h: 220px;
+            --card-w: 330px;
+          }
+        }
+        @media (min-width: 1280px) {
+          :root {
+            --card-h: 240px;
+            --card-w: 350px;
+          }
+        }
+        @keyframes marquee-left {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-25%); }
+        }
+        @keyframes marquee-right {
+          0% { transform: translateX(-25%); }
+          100% { transform: translateX(0); }
+        }
+        .pause-on-hover:hover {
+          animation-play-state: paused !important;
+        }
+      `}} />
+
+      <div className="relative w-full flex flex-col gap-4 sm:gap-5 md:gap-8 pb-6 md:pb-10">
+
         {/* Gradients for fading edges */}
-        <div className="pointer-events-none absolute top-0 left-0 z-20 h-full w-[100px] md:w-[200px] bg-gradient-to-r from-white via-white/80 to-transparent" />
-        <div className="pointer-events-none absolute top-0 right-0 z-20 h-full w-[100px] md:w-[200px] bg-gradient-to-l from-white via-white/80 to-transparent" />
+        <div className="pointer-events-none absolute top-0 left-0 z-20 h-full w-[60px] sm:w-[100px] md:w-[200px] bg-gradient-to-r from-white via-white/80 to-transparent" />
+        <div className="pointer-events-none absolute top-0 right-0 z-20 h-full w-[60px] sm:w-[100px] md:w-[200px] bg-gradient-to-l from-white via-white/80 to-transparent" />
 
         {/* First Row (Right to Left) */}
         <div className="flex w-max pause-on-hover" style={{ animation: 'marquee-left 60s linear infinite' }}>
@@ -73,20 +120,6 @@ export default function BusinessTypes() {
           ))}
         </div>
       </div>
-
-      <style dangerouslySetInnerHTML={{__html: `
-        @keyframes marquee-left {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-25%); }
-        }
-        @keyframes marquee-right {
-          0% { transform: translateX(-25%); }
-          100% { transform: translateX(0); }
-        }
-        .pause-on-hover:hover {
-          animation-play-state: paused !important;
-        }
-      `}} />
     </section>
   );
 }

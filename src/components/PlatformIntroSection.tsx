@@ -173,19 +173,19 @@ function ProductCard({ label, type, Icon, tagline, bg, textColor, children, side
   const isPhone = type === "Mobile";
   return (
     <div
-      className={`group relative rounded-[2rem] overflow-hidden ${bg} border border-white/60 shadow-sm hover:shadow-xl transition-all duration-500 p-7 flex ${isPhone ? "flex-row items-center gap-6" : "flex-col"} hover:-translate-y-1`}
-      style={{ height: isPhone ? "160px" : "260px" }}
+      className={`group relative rounded-[1.5rem] sm:rounded-[2rem] overflow-hidden ${bg} border border-white/60 shadow-sm hover:shadow-xl transition-all duration-500 p-4 sm:p-5 md:p-7 flex ${isPhone ? "flex-row items-center gap-3 sm:gap-4 md:gap-6" : "flex-col"} hover:-translate-y-1`}
+      style={{ height: isPhone ? 'clamp(130px, 18vw, 160px)' : 'clamp(200px, 26vw, 260px)' }}
     >
       {/* Text */}
       <div className={`${isPhone ? "flex-1 min-w-0" : "mb-auto"}`}>
-        <div className={`flex items-center gap-2 mb-3`}>
-          <div className="w-7 h-7 rounded-xl bg-white/70 flex items-center justify-center shadow-sm shrink-0">
-            <Icon className={`w-4 h-4 ${textColor}`} strokeWidth={2} />
+        <div className={`flex items-center gap-1.5 sm:gap-2 mb-2 sm:mb-3`}>
+          <div className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 rounded-lg sm:rounded-xl bg-white/70 flex items-center justify-center shadow-sm shrink-0">
+            <Icon className={`w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4 ${textColor}`} strokeWidth={2} />
           </div>
-          <span className={`text-[11px] font-bold uppercase tracking-widest ${textColor} opacity-70`}>{type}</span>
+          <span className={`text-[9px] sm:text-[10px] md:text-[11px] font-bold uppercase tracking-widest ${textColor} opacity-70`}>{type}</span>
         </div>
-        <h4 className={`text-xl font-extrabold ${textColor} tracking-tight leading-tight mb-1`}>{label}</h4>
-        <p className={`text-[13px] font-medium leading-snug ${textColor} opacity-60 max-w-[180px]`}>{tagline}</p>
+        <h4 className={`text-base sm:text-lg md:text-xl font-extrabold ${textColor} tracking-tight leading-tight mb-0.5 sm:mb-1`}>{label}</h4>
+        <p className={`text-[11px] sm:text-[12px] md:text-[13px] font-medium leading-snug ${textColor} opacity-60 max-w-[160px] sm:max-w-[180px]`}>{tagline}</p>
       </div>
 
       {/* Mockup */}
@@ -193,8 +193,8 @@ function ProductCard({ label, type, Icon, tagline, bg, textColor, children, side
         className={`
           transition-all duration-700 ease-out overflow-hidden shrink-0
           ${isPhone
-            ? "w-[100px] h-[130px] rounded-[1.25rem] shadow-[0_10px_30px_rgba(0,0,0,0.12)] group-hover:scale-105"
-            : "absolute -bottom-6 left-6 right-6 h-[130px] rounded-t-2xl shadow-[0_-8px_24px_rgba(0,0,0,0.06)] group-hover:-translate-y-4"
+            ? "w-[80px] h-[105px] sm:w-[90px] sm:h-[115px] md:w-[100px] md:h-[130px] rounded-[1rem] sm:rounded-[1.25rem] shadow-[0_10px_30px_rgba(0,0,0,0.12)] group-hover:scale-105"
+            : "absolute -bottom-6 left-4 right-4 sm:left-5 sm:right-5 md:left-6 md:right-6 h-[100px] sm:h-[115px] md:h-[130px] rounded-t-xl sm:rounded-t-2xl shadow-[0_-8px_24px_rgba(0,0,0,0.06)] group-hover:-translate-y-4"
           }
         `}
       >
@@ -208,20 +208,20 @@ function ProductCard({ label, type, Icon, tagline, bg, textColor, children, side
 
 export default function PlatformIntroSection() {
   return (
-    <section className="py-24 md:py-40 bg-white overflow-hidden">
+    <section className="py-14 sm:py-20 md:py-32 lg:py-40 bg-white overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* ── Overture: editorial top text ── */}
-        <div className="mb-20 md:mb-28">
-          <p className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-palama-muted mb-5">
+        <div className="mb-12 sm:mb-16 md:mb-24 lg:mb-28">
+          <p className="text-[10px] sm:text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-palama-muted mb-3 sm:mb-5">
             The Palama Ecosystem
           </p>
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
-            <h2 className="text-4xl md:text-[60px] lg:text-[72px] font-extrabold text-palama-navy tracking-tight leading-[1.0] max-w-3xl">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-5 sm:gap-8">
+            <h2 className="text-[26px] sm:text-4xl md:text-5xl lg:text-[60px] xl:text-[72px] font-extrabold text-palama-navy tracking-tight leading-[1.05] max-w-3xl">
               Not a tool.<br />
               <span className="text-palama-muted/40">A complete world.</span>
             </h2>
-            <p className="text-lg md:text-xl text-palama-muted font-medium leading-relaxed max-w-sm md:text-right">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-palama-muted font-medium leading-relaxed max-w-sm md:text-right">
               Four custom-built products. Your brand on every screen your clients and team will ever touch.
             </p>
           </div>
@@ -332,28 +332,28 @@ export default function PlatformIntroSection() {
         </div>
 
         {/* ── Footer statement ── */}
-        <div className="mt-20 md:mt-28 flex flex-col md:flex-row items-center gap-6 justify-between">
+        <div className="mt-12 sm:mt-16 md:mt-24 lg:mt-28 flex flex-col md:flex-row items-center gap-5 sm:gap-6 justify-between">
           {/* Large faded stat */}
           <div className="flex items-baseline gap-2">
-            <span className="text-[80px] md:text-[100px] font-black text-gray-50 leading-none tracking-tighter select-none">4</span>
+            <span className="text-[60px] sm:text-[80px] md:text-[100px] font-black text-gray-50 leading-none tracking-tighter select-none">4</span>
             <div>
-              <div className="text-2xl md:text-3xl font-extrabold text-palama-navy tracking-tight leading-tight">
+              <div className="text-xl sm:text-2xl md:text-3xl font-extrabold text-palama-navy tracking-tight leading-tight">
                 products.
               </div>
-              <div className="text-2xl md:text-3xl font-extrabold text-palama-muted/40 tracking-tight leading-tight">
+              <div className="text-xl sm:text-2xl md:text-3xl font-extrabold text-palama-muted/40 tracking-tight leading-tight">
                 one identity.
               </div>
             </div>
           </div>
 
           {/* Right detail */}
-          <div className="max-w-md text-right">
-            <p className="text-palama-muted font-medium text-lg leading-relaxed mb-6">
+          <div className="max-w-md text-center md:text-right">
+            <p className="text-palama-muted font-medium text-sm sm:text-base md:text-lg leading-relaxed mb-4 sm:mb-6">
               Every product runs on the same infrastructure, shares your brand language, and syncs in real time — so your clients and your team always experience one cohesive platform.
             </p>
-            <button className="inline-flex items-center gap-2 text-palama-navy font-bold text-[15px] border-b-2 border-palama-navy pb-0.5 hover:gap-4 transition-all duration-200">
+            <button className="inline-flex items-center gap-2 text-palama-navy font-bold text-[13px] sm:text-[14px] md:text-[15px] border-b-2 border-palama-navy pb-0.5 hover:gap-4 transition-all duration-200">
               Explore the platform
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>
             </button>
