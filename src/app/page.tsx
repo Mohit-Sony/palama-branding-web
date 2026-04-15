@@ -1,6 +1,7 @@
 import Hero from "@/components/Hero";
 import ValuePropsSection from "@/components/ValuePropsSection";
 import GlobalStats from "@/components/GlobalStats";
+import PlatformIntroSection from "@/components/PlatformIntroSection";
 import BusinessTypes from "@/components/BusinessTypes";
 import FeatureGrid from "@/components/FeatureGrid";
 import MarketplaceSection from "@/components/MarketplaceSection";
@@ -11,10 +12,13 @@ export default function Home() {
   return (
     <div className="flex flex-col w-full">
       <Hero />
-      <ValuePropsSection />
       {/* <GlobalStats /> */}
+      <PlatformIntroSection />
       <BusinessTypes />
       <FeatureGrid />
+
+      <ValuePropsSection />
+
       {/* <MarketplaceSection /> */}
       <TestimonialsSection />
       <FAQSection />

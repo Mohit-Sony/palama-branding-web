@@ -60,14 +60,14 @@ export default function BusinessTypes() {
         <div className="pointer-events-none absolute top-0 right-0 z-20 h-full w-[100px] md:w-[200px] bg-gradient-to-l from-white via-white/80 to-transparent" />
 
         {/* First Row (Right to Left) */}
-        <div className="flex w-max hover:[animation-play-state:paused]" style={{ animation: 'marquee-left 60s linear infinite' }}>
+        <div className="flex w-max pause-on-hover" style={{ animation: 'marquee-left 60s linear infinite' }}>
           {[...row1, ...row1, ...row1, ...row1].map((item, i) => (
             <RowItem key={i} item={item} />
           ))}
         </div>
 
         {/* Second Row (Left to Right) */}
-        <div className="flex w-max hover:[animation-play-state:paused]" style={{ animation: 'marquee-right 60s linear infinite' }}>
+        <div className="flex w-max pause-on-hover" style={{ animation: 'marquee-right 60s linear infinite' }}>
           {[...row2, ...row2, ...row2, ...row2].map((item, i) => (
             <RowItem key={i} item={item} />
           ))}
@@ -82,6 +82,9 @@ export default function BusinessTypes() {
         @keyframes marquee-right {
           0% { transform: translateX(-25%); }
           100% { transform: translateX(0); }
+        }
+        .pause-on-hover:hover {
+          animation-play-state: paused !important;
         }
       `}} />
     </section>
