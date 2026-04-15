@@ -29,7 +29,7 @@ export default function Header() {
             <Link href="#" className="flex items-center gap-1.5 hover:opacity-70 transition-opacity">
               Business types <ChevronDown className="w-4 h-4" />
             </Link>
-            <Link href="#" className="flex items-center gap-1.5 hover:opacity-70 transition-opacity">
+            <Link href="/features" className="flex items-center gap-1.5 hover:opacity-70 transition-opacity">
               Features <ChevronDown className="w-4 h-4" />
             </Link>
             <Link href="#" className="hover:opacity-70 transition-opacity">
