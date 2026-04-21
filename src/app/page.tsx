@@ -3,6 +3,7 @@ import ValuePropsSection from "@/components/ValuePropsSection";
 import GlobalStats from "@/components/GlobalStats";
 import PlatformIntroSection from "@/components/PlatformIntroSection";
 import BusinessTypes from "@/components/BusinessTypes";
+import BusinessTypesClassical from "@/components/BusinessTypesClassical";
 import FeatureGrid from "@/components/FeatureGrid";
 import MarketplaceSection from "@/components/MarketplaceSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
@@ -14,13 +15,14 @@ export default function Home() {
       <Hero />
       {/* <GlobalStats /> */}
       <PlatformIntroSection />
-      <BusinessTypes />
+      <BusinessTypesClassical />
       <FeatureGrid />
 
       <ValuePropsSection />
 
       {/* <MarketplaceSection /> */}
       <TestimonialsSection />
+      <BusinessTypes />
       <FAQSection />
 
       {/* Final CTA Section */}
