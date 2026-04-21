@@ -49,10 +49,14 @@ export default function Footer() {
           </div>
 
           <div className="flex items-center gap-8">
-            {/* Social Icons Placeholder */}
-            {["Instagram", "Facebook", "Twitter", "LinkedIn"].map((social) => (
-              <Link key={social} href="#" className="text-gray-500 hover:text-white transition-colors text-sm font-semibold">
-                {social}
+            {/* Social Links */}
+            {[
+              { name: "Instagram", href: "https://www.instagram.com/palama.io/" },
+              { name: "Facebook", href: "https://www.facebook.com/palama.io" },
+              { name: "LinkedIn", href: "https://www.linkedin.com/company/palama-io" }
+            ].map((social) => (
+              <Link key={social.name} href={social.href} target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-white transition-colors text-sm font-semibold">
+                {social.name}
               </Link>
             ))}
           </div>
