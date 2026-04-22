@@ -11,9 +11,9 @@ export default function FeatureGrid1() {
       <div className="absolute bottom-[10%] right-[10%] w-[40%] h-[40%] rounded-full bg-slate-200/50 blur-[120px] -z-10" />
 
       <div className="max-w-(--spacing-container) mx-auto px-6 sm:px-8 relative z-10">
-        
+
         <div className="text-center max-w-4xl mx-auto mb-20 md:mb-24">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -23,7 +23,7 @@ export default function FeatureGrid1() {
             Everything you need to <br className="hidden sm:block" />
             <span className="text-slate-400">run your empire.</span>
           </motion.h2>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -36,9 +36,9 @@ export default function FeatureGrid1() {
 
         {/* Bento Grid Container */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[340px]">
-          
+
           {/* Feature 1: Appointment Scheduling (Wide) */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-10%" }}
@@ -52,25 +52,53 @@ export default function FeatureGrid1() {
                 <ChevronRight className="w-5 h-5" />
               </div>
             </div>
-            {/* Minimalist Widget Glimpse */}
-            <div className="absolute right-[-5%] top-[15%] w-[55%] h-[120%] bg-white rounded-t-3xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] p-6 border border-slate-100 transition-transform duration-700 ease-out group-hover:-translate-y-4 group-hover:-translate-x-2">
-              <div className="flex justify-between items-center mb-6 pb-4 border-b border-slate-100">
-                <span className="font-bold text-base text-palama-navy">October 2026</span>
-                <div className="flex gap-2"><div className="w-5 h-5 bg-slate-100 rounded-md"></div><div className="w-5 h-5 bg-slate-100 rounded-md"></div></div>
+            {/* Minimalist Widget Glimpse -> High Fidelity Calendar */}
+            <div className="absolute right-[-10%] top-[10%] w-[65%] h-[120%] bg-[#F8FAFC] rounded-t-[2rem] shadow-[0_20px_50px_rgba(0,0,0,0.15)] overflow-hidden border border-slate-200 transition-transform duration-700 ease-out group-hover:-translate-y-4 group-hover:-translate-x-2 flex flex-col">
+              {/* Calendar Top Bar */}
+              <div className="bg-[#F8FAFC] p-3 border-b border-slate-200 flex justify-between items-center shrink-0">
+                <div className="flex gap-2">
+                  <div className="px-3 py-1 bg-white rounded-full text-[10px] font-bold border border-slate-200 text-slate-800">Today</div>
+                  <div className="px-3 py-1 bg-white rounded-full text-[10px] font-bold border border-slate-200 text-slate-800 flex gap-1 items-center">
+                    <span className="text-slate-400">Team</span>
+                  </div>
+                </div>
+                <div className="px-3 py-1 bg-indigo-600 rounded-full text-[10px] font-bold text-white">+ Add</div>
               </div>
-              <div className="grid grid-cols-7 gap-2">
-                {[...Array(21)].map((_, i) => (
-                  <div key={i} className="aspect-square bg-slate-50 rounded-lg flex items-center justify-center text-[11px] text-slate-300 font-bold overflow-hidden relative border border-slate-100">
-                    {i === 10 && <div className="absolute inset-0 bg-palama-navy text-white flex items-center justify-center">12</div>}
-                    {i === 15 && <div className="absolute inset-1.5 bg-slate-200 rounded-md"></div>}
+
+              {/* Staff Headers */}
+              <div className="flex bg-[#F8FAFC] border-b border-slate-200 shrink-0 px-2 py-2">
+                <div className="w-10 shrink-0"></div> {/* Time column spacer */}
+                {['Shane S', 'Sarah J', 'Michael C'].map((name, i) => (
+                  <div key={i} className="flex-1 flex flex-col items-center gap-1 border-l border-slate-100 last:border-r px-1">
+                    <div className="w-8 h-8 rounded-full bg-slate-200 border-2 border-white shadow-sm flex items-center justify-center text-[10px] font-bold text-slate-500">{name[0]}</div>
+                    <div className="text-[9px] font-bold text-slate-800">{name}</div>
                   </div>
                 ))}
+              </div>
+
+              {/* Grid Lines */}
+              <div className="flex-1 flex relative bg-white">
+                <div className="w-10 border-r border-slate-100 flex flex-col pt-2 bg-[#F8FAFC]">
+                  {['9 AM', '10 AM', '11 AM', '12 PM'].map(time => (
+                    <div key={time} className="h-10 text-[8px] text-slate-400 font-medium text-center">{time}</div>
+                  ))}
+                </div>
+                {/* Columns */}
+                <div className="flex-1 flex bg-[linear-gradient(to_right,#f1f5f9_1px,transparent_1px),linear-gradient(to_bottom,#f1f5f9_1px,transparent_1px)] bg-[size:33.33%_40px]">
+                  {/* Mock Appointment */}
+                  <div className="absolute top-10 left-[40px] w-[calc(33.33%-40px/3)] h-[60px] p-1">
+                    <div className="w-full h-full bg-indigo-100 border-l-2 border-indigo-600 rounded-sm shadow-sm p-1.5 flex flex-col gap-0.5">
+                      <div className="text-[8px] font-bold text-indigo-900">Women's Haircut</div>
+                      <div className="text-[7px] text-indigo-700">10:00 - 11:30 AM</div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </motion.div>
 
           {/* Feature 2: Point of Sale (Tall) */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-10%" }}
@@ -82,28 +110,35 @@ export default function FeatureGrid1() {
               <p className="text-base text-slate-400 font-medium">A checkout experience so seamless, your clients won't even notice it.</p>
             </div>
             {/* Widget Glimpse */}
-            <div className="absolute bottom-[-5%] left-[10%] right-[10%] h-[75%] bg-white rounded-t-[2.5rem] shadow-[0_-20px_50px_rgba(0,0,0,0.5)] border-t border-x border-slate-200 transition-transform duration-700 ease-out group-hover:-translate-y-6">
-              <div className="w-12 h-1.5 bg-slate-200 rounded-full mx-auto mt-4 mb-8"></div>
-              <div className="px-6 space-y-4">
-                <div className="flex justify-between items-center bg-slate-50 p-4 rounded-2xl border border-slate-100">
-                   <div className="flex items-center gap-3">
-                     <div className="w-8 h-8 rounded-full bg-slate-200 flex items-center justify-center"><CreditCard className="w-4 h-4 text-slate-600" /></div>
-                     <div className="h-3 w-20 bg-slate-200 rounded-full"></div>
-                   </div>
-                   <div className="w-5 h-5 rounded-full border-4 border-palama-navy"></div>
+            <div className="absolute bottom-[-5%] left-[10%] right-[10%] h-[75%] bg-[#F1F5F9] rounded-t-[2.5rem] shadow-[0_-20px_50px_rgba(0,0,0,0.5)] border-t border-x border-slate-300 transition-transform duration-700 ease-out group-hover:-translate-y-6">
+              <div className="w-12 h-1.5 bg-slate-300 rounded-full mx-auto mt-4 mb-6"></div>
+              <div className="px-6 space-y-3">
+                <div className="flex justify-between items-center bg-white p-4 rounded-2xl border border-slate-200 shadow-sm">
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center"><CreditCard className="w-4 h-4 text-indigo-600" /></div>
+                    <div className="h-2.5 w-20 bg-slate-200 rounded-full"></div>
+                  </div>
+                  <div className="w-5 h-5 rounded-full border-4 border-indigo-600"></div>
                 </div>
-                <div className="mt-8 pt-6 border-t border-dashed border-slate-200">
-                   <div className="flex justify-between items-end">
-                     <span className="text-sm font-bold text-slate-400">Total</span>
-                     <span className="text-3xl font-bold text-palama-navy">$350</span>
-                   </div>
+                <div className="flex justify-between items-center bg-white p-4 rounded-2xl border border-slate-200 shadow-sm">
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center"></div>
+                    <div className="h-2.5 w-24 bg-slate-200 rounded-full"></div>
+                  </div>
+                  <div className="w-5 h-5 rounded-full border-2 border-slate-200"></div>
+                </div>
+                <div className="mt-6 pt-4 border-t border-dashed border-slate-300">
+                  <div className="flex justify-between items-end px-2">
+                    <span className="text-sm font-bold text-slate-500">Total</span>
+                    <span className="text-3xl font-bold text-slate-800">₹450</span>
+                  </div>
                 </div>
               </div>
             </div>
           </motion.div>
 
           {/* Feature 3: Client CRM */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-10%" }}
@@ -114,21 +149,55 @@ export default function FeatureGrid1() {
               <h3 className="text-2xl font-bold text-palama-navy mb-3 tracking-tight">Client CRM</h3>
               <p className="text-base text-slate-500 font-medium">Know your clients better than they know themselves.</p>
             </div>
-            {/* Widget Glimpse */}
-            <div className="absolute -bottom-8 right-6 w-[220px] h-48 bg-slate-50 rounded-t-3xl shadow-lg border border-slate-200 p-4 transition-transform duration-700 ease-out group-hover:translate-y-2 group-hover:scale-105">
-              <div className="flex flex-col gap-3">
-                {[1, 2, 3].map((v, i) => (
-                   <div key={v} className="flex items-center gap-3 bg-white rounded-xl p-3 shadow-sm border border-slate-100 transition-transform duration-500" style={{ transform: `translateX(${i * 12}px)` }}>
-                      <div className={`w-8 h-8 rounded-full border-2 border-white shadow-sm shrink-0 bg-slate-200`}></div>
-                      <div className="w-20 h-2.5 bg-slate-200 rounded-full"></div>
-                   </div>
+            {/* Widget Glimpse -> High Fidelity Data Table */}
+            <div className="absolute -bottom-8 right-0 w-[85%] h-56 bg-[#F8FAFC] rounded-tl-[2rem] shadow-[0_-10px_40px_rgba(0,0,0,0.1)] border-t border-l border-slate-200 p-5 transition-transform duration-700 ease-out group-hover:-translate-y-4 group-hover:-translate-x-2 flex flex-col gap-3">
+              {/* Search Bar */}
+              <div className="flex gap-2">
+                <div className="flex-1 bg-white h-8 rounded-lg border border-slate-200 flex items-center px-3">
+                  <div className="w-3 h-3 rounded-full border-2 border-slate-300"></div>
+                  <div className="w-16 h-1 bg-slate-200 rounded-full ml-2"></div>
+                </div>
+                <div className="w-20 bg-indigo-600 h-8 rounded-lg flex items-center justify-center text-[10px] text-white font-bold">+ Add</div>
+              </div>
+
+              {/* Table Headers */}
+              <div className="flex px-2 text-[9px] font-bold text-slate-400 uppercase tracking-wider">
+                <div className="w-24">Customer</div>
+                <div className="flex-1">Contact</div>
+                <div className="w-16 text-center">Tier</div>
+                <div className="w-16 text-center">Status</div>
+              </div>
+
+              {/* Rows */}
+              <div className="flex flex-col gap-2 relative">
+                {[
+                  { n: "Shane Soni", initial: "M", e: "imsoni@gmail...", t: "Regular", s: "Active" },
+                  { n: "Janhvi Tyagi", initial: "J", e: "janhvi@gmail...", t: "VIP", s: "Active" },
+                  { n: "Rahul Kumar", initial: "R", e: "rahul@gmail...", t: "Regular", s: "Inactive" },
+                ].map((row, i) => (
+                  <div key={i} className="flex items-center px-2 py-2 bg-white rounded-xl shadow-sm border border-slate-100">
+                    <div className="w-24 flex items-center gap-2">
+                      <div className="w-6 h-6 rounded-full bg-slate-100 flex items-center justify-center text-[8px] font-bold text-slate-600 shrink-0">{row.initial}</div>
+                      <div className="text-[10px] font-bold text-slate-800 truncate">{row.n}</div>
+                    </div>
+                    <div className="flex-1 text-[9px] text-slate-500 truncate">{row.e}</div>
+                    <div className="w-16 flex justify-center">
+                      <span className="px-2 py-0.5 bg-slate-100 text-slate-600 text-[8px] font-bold rounded-full">{row.t}</span>
+                    </div>
+                    <div className="w-16 flex justify-center">
+                      <span className={`px-2 py-0.5 text-[8px] font-bold rounded-full border ${row.s === 'Active' ? 'bg-emerald-50 text-emerald-600 border-emerald-200' : 'bg-slate-50 text-slate-500 border-slate-200'}`}>{row.s}</span>
+                    </div>
+                  </div>
                 ))}
+
+                {/* Subtle gradient to mask the bottom of the table */}
+                <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-[#F8FAFC] to-transparent pointer-events-none" />
               </div>
             </div>
           </motion.div>
 
           {/* Feature 4: Product Inventory */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-10%" }}
@@ -140,21 +209,21 @@ export default function FeatureGrid1() {
               <p className="text-base text-slate-500 font-medium">Never run out of what sells.</p>
             </div>
             <div className="absolute right-[-20px] bottom-[-20px] w-56 h-48 bg-slate-50 rounded-2xl shadow-lg overflow-hidden transition-transform duration-700 ease-out group-hover:-rotate-3 group-hover:scale-110 border border-slate-200 flex flex-col">
-               <div className="p-5 flex-1 flex flex-col justify-center gap-4">
-                  <div className="flex items-center justify-between bg-white p-3 rounded-xl shadow-sm border border-slate-100">
-                     <span className="text-xs font-bold text-palama-navy">Serum v2</span>
-                     <span className="text-[10px] font-bold text-white bg-slate-800 px-2.5 py-1 rounded-full">3 left</span>
-                  </div>
-                  <div className="flex items-center justify-between bg-white p-3 rounded-xl shadow-sm border border-slate-100">
-                     <span className="text-xs font-bold text-slate-400">Cleanser</span>
-                     <span className="text-[10px] font-bold text-slate-500 bg-slate-100 px-2.5 py-1 rounded-full">45 left</span>
-                  </div>
-               </div>
+              <div className="p-5 flex-1 flex flex-col justify-center gap-4">
+                <div className="flex items-center justify-between bg-white p-3 rounded-xl shadow-sm border border-slate-100">
+                  <span className="text-xs font-bold text-palama-navy">Serum v2</span>
+                  <span className="text-[10px] font-bold text-white bg-slate-800 px-2.5 py-1 rounded-full">3 left</span>
+                </div>
+                <div className="flex items-center justify-between bg-white p-3 rounded-xl shadow-sm border border-slate-100">
+                  <span className="text-xs font-bold text-slate-400">Cleanser</span>
+                  <span className="text-[10px] font-bold text-slate-500 bg-slate-100 px-2.5 py-1 rounded-full">45 left</span>
+                </div>
+              </div>
             </div>
           </motion.div>
 
           {/* Feature 5: Financial Reporting (Wide) */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-10%" }}
@@ -168,12 +237,24 @@ export default function FeatureGrid1() {
               <h3 className="text-2xl md:text-3xl font-bold text-palama-navy mb-4 tracking-tight">Executive Analytics</h3>
               <p className="text-base text-slate-500 font-medium">Real-time insights that help you scale. Track revenue, utilization, and retention at a glance.</p>
             </div>
-            {/* Widget Glimpse */}
-            <div className="absolute right-10 top-1/2 -translate-y-1/2 w-[35%] h-[60%] flex items-end gap-3 sm:gap-4 transition-all duration-700 ease-out">
-               {[40, 70, 45, 90, 60].map((h, i) => (
-                 <div key={i} className={`flex-1 rounded-t-xl transition-all duration-700 relative group-hover:-translate-y-2 ${i === 3 ? 'bg-palama-navy' : 'bg-slate-100'}`} style={{ height: `${h}%`, transitionDelay: `${i * 50}ms` }}>
-                 </div>
-               ))}
+            {/* Widget Glimpse -> Dashboard Stat Cards */}
+            <div className="absolute right-[-10%] top-[10%] w-[60%] h-[120%] bg-[#F8FAFC] rounded-t-[2rem] shadow-[0_20px_50px_rgba(0,0,0,0.15)] border border-slate-200 p-5 transition-transform duration-700 ease-out group-hover:-translate-y-4 flex flex-col gap-3">
+              {[
+                { title: "Total Appointments", val: "128", iconColor: "bg-blue-500", text: "text-blue-500" },
+                { title: "Total Customers", val: "89", iconColor: "bg-emerald-500", text: "text-emerald-500" },
+                { title: "Revenue", val: "₹45,230", iconColor: "bg-purple-500", text: "text-purple-500" },
+                { title: "Services", val: "24", iconColor: "bg-orange-500", text: "text-orange-500" },
+              ].map((stat, i) => (
+                <div key={i} className="bg-white rounded-2xl p-4 shadow-sm border border-slate-100 flex justify-between items-center transition-transform duration-500 hover:-translate-y-1">
+                  <div>
+                    <div className="text-[10px] font-medium text-slate-500 mb-1">{stat.title}</div>
+                    <div className="text-xl font-bold text-slate-800">{stat.val}</div>
+                  </div>
+                  <div className={`w-10 h-10 rounded-full ${stat.iconColor} flex items-center justify-center shrink-0`}>
+                    <div className="w-4 h-4 bg-white/20 rounded-sm"></div>
+                  </div>
+                </div>
+              ))}
             </div>
           </motion.div>
 

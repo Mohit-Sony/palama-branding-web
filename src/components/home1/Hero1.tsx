@@ -13,15 +13,7 @@ export default function Hero1() {
       <div className="absolute top-[10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-purple-100/30 blur-[120px] -z-10 mix-blend-multiply" />
 
       <div className="max-w-(--spacing-container) mx-auto px-6 sm:px-8 text-center relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-100/80 backdrop-blur-sm border border-slate-200 mb-8"
-        >
-          <span className="w-2 h-2 rounded-full bg-palama-navy animate-pulse" />
-          <span className="text-xs sm:text-sm font-semibold tracking-wide text-palama-navy uppercase">The Anti-Marketplace</span>
-        </motion.div>
+
 
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
