@@ -43,7 +43,7 @@ export default function FeatureGrid1() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-10%" }}
             transition={{ duration: 0.8 }}
-            className="relative bg-white rounded-[32px] overflow-hidden group md:col-span-2 p-8 md:p-10 transition-all hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.08)] border border-slate-200/60"
+            className="relative bg-white rounded-[32px] overflow-hidden group md:col-span-2 min-h-[480px] sm:min-h-[400px] md:min-h-0 p-8 md:p-10 transition-all hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.08)] border border-slate-200/60"
           >
             <div className="relative z-10 w-full md:w-1/2">
               <h3 className="text-2xl md:text-3xl font-bold text-palama-navy mb-4 tracking-tight">Smart Scheduling</h3>
@@ -68,10 +68,14 @@ export default function FeatureGrid1() {
               {/* Staff Headers */}
               <div className="flex bg-[#F8FAFC] border-b border-slate-200 shrink-0 px-2 py-2">
                 <div className="w-10 shrink-0"></div> {/* Time column spacer */}
-                {['Shane S', 'Sarah J', 'Michael C'].map((name, i) => (
+                {[
+                  { name: 'David L', img: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=64&h=64' },
+                  { name: 'Sarah J', img: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=64&h=64' },
+                  { name: 'Michael C', img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=64&h=64' }
+                ].map((staff, i) => (
                   <div key={i} className="flex-1 flex flex-col items-center gap-1 border-l border-slate-100 last:border-r px-1">
-                    <div className="w-8 h-8 rounded-full bg-slate-200 border-2 border-white shadow-sm flex items-center justify-center text-[10px] font-bold text-slate-500">{name[0]}</div>
-                    <div className="text-[9px] font-bold text-slate-800">{name}</div>
+                    <img src={staff.img} alt={staff.name} className="w-8 h-8 rounded-full border-2 border-white shadow-sm object-cover bg-slate-200" />
+                    <div className="text-[9px] font-bold text-slate-800 truncate w-full text-center">{staff.name}</div>
                   </div>
                 ))}
               </div>
@@ -85,11 +89,25 @@ export default function FeatureGrid1() {
                 </div>
                 {/* Columns */}
                 <div className="flex-1 flex bg-[linear-gradient(to_right,#f1f5f9_1px,transparent_1px),linear-gradient(to_bottom,#f1f5f9_1px,transparent_1px)] bg-[size:33.33%_40px]">
-                  {/* Mock Appointment */}
+                  {/* Mock Appointment 1 */}
                   <div className="absolute top-10 left-[40px] w-[calc(33.33%-40px/3)] h-[60px] p-1">
                     <div className="w-full h-full bg-indigo-100 border-l-2 border-indigo-600 rounded-sm shadow-sm p-1.5 flex flex-col gap-0.5">
-                      <div className="text-[8px] font-bold text-indigo-900">Women's Haircut</div>
-                      <div className="text-[7px] text-indigo-700">10:00 - 11:30 AM</div>
+                      <div className="text-[8px] font-bold text-indigo-900 truncate">Women's Haircut</div>
+                      <div className="text-[7px] text-indigo-700 truncate">10:00 - 11:30 AM</div>
+                    </div>
+                  </div>
+                  {/* Mock Appointment 2 */}
+                  <div className="absolute top-20 left-[calc(40px+(33.33%-40px/3))] w-[calc(33.33%-40px/3)] h-[40px] p-1">
+                    <div className="w-full h-full bg-emerald-100 border-l-2 border-emerald-600 rounded-sm shadow-sm p-1.5 flex flex-col gap-0.5">
+                      <div className="text-[8px] font-bold text-emerald-900 truncate">Color Touch Up</div>
+                      <div className="text-[7px] text-emerald-700 truncate">11:00 - 12:00 PM</div>
+                    </div>
+                  </div>
+                  {/* Mock Appointment 3 */}
+                  <div className="absolute top-0 left-[calc(40px+2*(33.33%-40px/3))] w-[calc(33.33%-40px/3)] h-[80px] p-1">
+                    <div className="w-full h-full bg-amber-100 border-l-2 border-amber-600 rounded-sm shadow-sm p-1.5 flex flex-col gap-0.5">
+                      <div className="text-[8px] font-bold text-amber-900 truncate">Bridal Makeup</div>
+                      <div className="text-[7px] text-amber-700 truncate">9:00 - 11:00 AM</div>
                     </div>
                   </div>
                 </div>
@@ -171,9 +189,9 @@ export default function FeatureGrid1() {
               {/* Rows */}
               <div className="flex flex-col gap-2 relative">
                 {[
-                  { n: "Shane Soni", initial: "M", e: "imsoni@gmail...", t: "Regular", s: "Active" },
-                  { n: "Janhvi Tyagi", initial: "J", e: "janhvi@gmail...", t: "VIP", s: "Active" },
-                  { n: "Rahul Kumar", initial: "R", e: "rahul@gmail...", t: "Regular", s: "Inactive" },
+                  { n: "Sarah Jenkins", initial: "S", e: "sarah.j@gmail...", t: "Regular", s: "Active" },
+                  { n: "Michael Chen", initial: "M", e: "m.chen@gmail...", t: "VIP", s: "Active" },
+                  { n: "Emily Davis", initial: "E", e: "emily.d@gmail...", t: "Regular", s: "Inactive" },
                 ].map((row, i) => (
                   <div key={i} className="flex items-center px-2 py-2 bg-white rounded-xl shadow-sm border border-slate-100">
                     <div className="w-24 flex items-center gap-2">
