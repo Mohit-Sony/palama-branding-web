@@ -50,11 +50,11 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-sans);
 }
 
+input, textarea, [contenteditable="true"], p, span, h1, h2, h3, h4, h5, h6, li {
+  cursor: url('/assets/cursor-text.svg') 0 0, text !important;
+}
+
 button, a, .cursor-pointer {
   cursor: url('/assets/cursor-hover.svg') 0 0, pointer !important;
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-input, textarea, [contenteditable="true"], p, span, h1, h2, h3, h4, h5, h6, li {
-  cursor: url('/assets/cursor-text.svg') 0 0, text !important;
 }
