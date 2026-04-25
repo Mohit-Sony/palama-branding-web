@@ -1,10 +1,27 @@
+import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { businessTypesData } from "@/data/businessTypes";
 import BusinessTypeLanding from "@/components/BusinessTypeLanding";
 
 interface Props {
-  params: {
+  params: Promise<{
     slug: string;
+  }>;
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const data = businessTypesData[slug];
+  
+  if (!data) {
+    return {
+      title: "Not Found",
+    };
+  }
+
+  return {
+    title: `${data.name} Software`,
+    description: `Elevate your ${data.name.toLowerCase()} business with Palama. The gold standard for booking, management, and growth.`,
   };
 }
 

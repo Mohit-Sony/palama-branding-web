@@ -1,5 +1,4 @@
-"use client";
-
+import Link from "next/link";
 import Image from "next/image";
 import { CheckCircle2, ChevronRight } from "lucide-react";
 
@@ -9,7 +8,7 @@ export default function MarketplaceSection() {
       <div className="max-w-(--spacing-container) mx-auto px-6">
         <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-32">
           <div className="flex-1 space-y-10 order-2 lg:order-1">
-            <h2 className="text-4xl md:text-[56px] font-bold text-palama-navy leading-[1.1] tracking-tight">
+            <h2 className="text-4xl md:text-[56px] font-extrabold text-palama-navy leading-[1.1] tracking-tight">
               Get discovered on the world's most popular marketplace
             </h2>
             <p className="text-lg md:text-xl text-palama-muted leading-relaxed font-medium">
@@ -28,10 +27,12 @@ export default function MarketplaceSection() {
               ))}
             </ul>
             <div className="flex items-center gap-8 pt-4">
-              <button className="bg-white text-palama-navy border-2 border-palama-navy px-10 py-5 rounded-full text-[17px] font-bold hover:bg-palama-navy hover:text-white transition-all active:scale-95 shadow-md">
-                Learn about Marketplace
-              </button>
-              <Link href="#" className="flex items-center gap-2 text-palama-navy font-bold text-[15px] hover:gap-4 transition-all">
+              <Link href="/features">
+                <button className="bg-white text-palama-navy border-2 border-palama-navy px-10 py-5 rounded-full text-[17px] font-bold hover:bg-palama-navy hover:text-white transition-all active:scale-95 shadow-md">
+                  Learn about Marketplace
+                </button>
+              </Link>
+              <Link href="/features" className="flex items-center gap-2 text-palama-navy font-bold text-[15px] hover:gap-4 transition-all">
                 See all features <ChevronRight className="w-5 h-5" />
               </Link>
             </div>

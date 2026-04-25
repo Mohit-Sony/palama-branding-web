@@ -1,5 +1,4 @@
-"use client";
-
+import Link from "next/link";
 import React from "react";
 import { Globe, Smartphone, LayoutDashboard, TabletSmartphone } from "lucide-react";
 
@@ -63,7 +62,7 @@ function ClientAppMockup() {
         ))}
       </div>
       <div className="h-8 bg-white border-t border-gray-100 flex items-center justify-around px-3 shrink-0">
-        {[0,1,2,3].map(i => (
+        {[0, 1, 2, 3].map(i => (
           <div key={i} className={`w-4 h-4 rounded-md ${i === 0 ? "bg-palama-navy" : "bg-gray-100"}`} />
         ))}
       </div>
@@ -76,7 +75,7 @@ function AdminPortalMockup() {
     <div className="w-full h-full flex rounded-2xl overflow-hidden border border-gray-100 bg-white">
       <div className="w-9 bg-palama-navy flex flex-col items-center py-2.5 gap-2.5 shrink-0">
         <div className="w-5 h-5 rounded-lg bg-white/20" />
-        {[0,1,2,3].map(i => (
+        {[0, 1, 2, 3].map(i => (
           <div key={i} className={`w-4 h-4 rounded-md ${i === 0 ? "bg-white/40" : "bg-white/10"}`} />
         ))}
       </div>
@@ -89,21 +88,21 @@ function AdminPortalMockup() {
           </div>
         </div>
         <div className="grid grid-cols-3 gap-1.5 p-2.5 shrink-0">
-          {["$2.4k","18","4.9★"].map((v, i) => (
+          {["$2.4k", "18", "4.9★"].map((v, i) => (
             <div key={i} className="bg-gray-50 rounded-xl p-1.5 text-center">
-              <div className="text-[8px] font-black text-palama-navy">{v}</div>
+              <div className="text-[8px] font-extrabold text-palama-navy">{v}</div>
             </div>
           ))}
         </div>
         <div className="flex-1 px-2.5 flex flex-col gap-1.5 overflow-hidden">
-          {["bg-blue-50 border-blue-100","bg-purple-50 border-purple-100","bg-pink-50 border-pink-100"].map((cls, i) => (
+          {["bg-blue-50 border-blue-100", "bg-purple-50 border-purple-100", "bg-pink-50 border-pink-100"].map((cls, i) => (
             <div key={i} className={`flex items-center gap-2 p-2 rounded-xl border ${cls}`}>
               <div className="w-5 h-5 rounded-full bg-gray-200 shrink-0" />
               <div className="flex-1">
                 <div className="w-10 h-1.5 bg-gray-300 rounded-full mb-1" />
                 <div className="w-7 h-1 bg-gray-200 rounded-full" />
               </div>
-              <div className="text-[7px] font-bold text-gray-400">{["9:00","10:30","13:00"][i]}</div>
+              <div className="text-[7px] font-bold text-gray-400">{["9:00", "10:30", "13:00"][i]}</div>
             </div>
           ))}
         </div>
@@ -128,18 +127,18 @@ function AdminAppMockup() {
       </div>
       <div className="px-2.5 py-2 shrink-0">
         <div className="flex gap-1.5">
-          {["12 Apts","3 Staff","$860"].map((v, i) => (
+          {["12 Apts", "3 Staff", "$860"].map((v, i) => (
             <div key={i} className="flex-1 bg-[#F9FAFB] rounded-xl p-1.5 text-center border border-gray-100">
-              <div className="text-[7px] font-black text-palama-navy">{v}</div>
+              <div className="text-[7px] font-extrabold text-palama-navy">{v}</div>
             </div>
           ))}
         </div>
       </div>
       <div className="flex-1 px-2.5 flex flex-col gap-1.5 overflow-hidden">
         {[
-          {dot:"bg-green-400", msg:"New booking"},
-          {dot:"bg-blue-400", msg:"Reminder sent"},
-          {dot:"bg-amber-400", msg:"Client checked in"},
+          { dot: "bg-green-400", msg: "New booking" },
+          { dot: "bg-blue-400", msg: "Reminder sent" },
+          { dot: "bg-amber-400", msg: "Client checked in" },
         ].map((n, i) => (
           <div key={i} className="flex items-center gap-2 p-2 bg-gray-50 rounded-xl border border-gray-100">
             <div className={`w-1.5 h-1.5 rounded-full ${n.dot} shrink-0`} />
@@ -148,7 +147,7 @@ function AdminAppMockup() {
         ))}
       </div>
       <div className="h-8 bg-white border-t border-gray-100 flex items-center justify-around px-3 shrink-0">
-        {[0,1,2,3].map(i => (
+        {[0, 1, 2, 3].map(i => (
           <div key={i} className={`w-4 h-4 rounded-md ${i === 0 ? "bg-palama-navy" : "bg-gray-100"}`} />
         ))}
       </div>
@@ -209,11 +208,11 @@ function ProductCard({ label, type, Icon, tagline, bg, textColor, children, side
 export default function PlatformIntroSection() {
   return (
     <section className="py-14 sm:py-20 md:py-32 lg:py-40 bg-white overflow-hidden">
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-(--spacing-container) mx-auto px-6">
 
         {/* ── Overture: editorial top text ── */}
         <div className="mb-12 sm:mb-16 md:mb-24 lg:mb-28">
-          <p className="text-[10px] sm:text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-palama-muted mb-3 sm:mb-5">
+          <p className="text-[10px] sm:text-xs md:text-sm font-extrabold tracking-[0.2em] uppercase text-palama-muted mb-3 sm:mb-5">
             The Palama Ecosystem
           </p>
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-5 sm:gap-8">
@@ -235,7 +234,7 @@ export default function PlatformIntroSection() {
             {/* World label */}
             <div className="flex items-center gap-3 mb-1">
               <div className="h-px flex-1 bg-gradient-to-r from-transparent to-gray-200" />
-              <span className="text-[11px] font-black tracking-[0.25em] uppercase text-palama-muted/50 whitespace-nowrap">
+              <span className="text-[11px] font-extrabold tracking-[0.25em] uppercase text-palama-muted/50 whitespace-nowrap">
                 For Your Clients
               </span>
               <div className="h-px flex-1 bg-gradient-to-l from-transparent to-gray-200" />
@@ -278,7 +277,7 @@ export default function PlatformIntroSection() {
             </div>
             {/* Central Palama Badge */}
             <div className="relative z-10 w-16 h-16 rounded-[1.4rem] bg-palama-navy shadow-2xl flex items-center justify-center rotate-12 hover:rotate-0 transition-transform duration-500 cursor-default">
-              <span className="text-white font-black text-2xl tracking-tighter -rotate-12 hover:rotate-0 transition-transform duration-500">P</span>
+              <span className="text-white font-extrabold text-2xl tracking-tighter -rotate-12 hover:rotate-0 transition-transform duration-500">P</span>
             </div>
           </div>
 
@@ -286,7 +285,7 @@ export default function PlatformIntroSection() {
           <div className="flex lg:hidden items-center gap-4 py-2">
             <div className="h-px flex-1 bg-gray-200" />
             <div className="w-12 h-12 rounded-[1rem] bg-palama-navy flex items-center justify-center shadow-xl">
-              <span className="text-white font-black text-xl">P</span>
+              <span className="text-white font-extrabold text-xl">P</span>
             </div>
             <div className="h-px flex-1 bg-gray-200" />
           </div>
@@ -296,7 +295,7 @@ export default function PlatformIntroSection() {
             {/* World label */}
             <div className="flex items-center gap-3 mb-1">
               <div className="h-px flex-1 bg-gradient-to-r from-transparent to-gray-200" />
-              <span className="text-[11px] font-black tracking-[0.25em] uppercase text-palama-muted/50 whitespace-nowrap">
+              <span className="text-[11px] font-extrabold tracking-[0.25em] uppercase text-palama-muted/50 whitespace-nowrap">
                 For Your Business
               </span>
               <div className="h-px flex-1 bg-gradient-to-l from-transparent to-gray-200" />
@@ -335,7 +334,7 @@ export default function PlatformIntroSection() {
         <div className="mt-12 sm:mt-16 md:mt-24 lg:mt-28 flex flex-col md:flex-row items-center gap-5 sm:gap-6 justify-between">
           {/* Large faded stat */}
           <div className="flex items-baseline gap-2">
-            <span className="text-[60px] sm:text-[80px] md:text-[100px] font-black text-gray-50 leading-none tracking-tighter select-none">4</span>
+            <span className="text-[60px] sm:text-[80px] md:text-[100px] font-extrabold text-gray-50 leading-none tracking-tighter select-none">4</span>
             <div>
               <div className="text-xl sm:text-2xl md:text-3xl font-extrabold text-palama-navy tracking-tight leading-tight">
                 products.
@@ -351,12 +350,14 @@ export default function PlatformIntroSection() {
             <p className="text-palama-muted font-medium text-sm sm:text-base md:text-lg leading-relaxed mb-4 sm:mb-6">
               Every product runs on the same infrastructure, shares your brand language, and syncs in real time — so your clients and your team always experience one cohesive platform.
             </p>
-            <button className="inline-flex items-center gap-2 text-palama-navy font-bold text-[13px] sm:text-[14px] md:text-[15px] border-b-2 border-palama-navy pb-0.5 hover:gap-4 transition-all duration-200">
-              Explore the platform
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
-            </button>
+            <Link href="/features">
+              <button className="inline-flex items-center gap-2 text-palama-navy font-bold text-[13px] sm:text-[14px] md:text-[15px] border-b-2 border-palama-navy pb-0.5 hover:gap-4 transition-all duration-200">
+                Explore the platform
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </button>
+            </Link>
           </div>
         </div>
 

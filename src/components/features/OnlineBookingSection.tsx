@@ -17,12 +17,12 @@ import FeatureSectionLayout from "./FeatureSectionLayout";
 // ─── Booking Widget Data ───────────────────────────────────────────────────────
 
 const SERVICES = [
-  { name: "Haircut & Style",    duration: "60 min",  price: "$65",  color: "#107050" },
-  { name: "Colour Treatment",   duration: "120 min", price: "$140", color: "#4F46E5" },
-  { name: "Deep Conditioning",  duration: "45 min",  price: "$45",  color: "#DB2777" },
+  { name: "Haircut & Style", duration: "60 min", price: "$65", color: "#107050" },
+  { name: "Colour Treatment", duration: "120 min", price: "$140", color: "#4F46E5" },
+  { name: "Deep Conditioning", duration: "45 min", price: "$45", color: "#DB2777" },
 ];
 
-const TIME_SLOTS     = ["9:00", "10:30", "11:00", "13:00", "14:30", "16:00"];
+const TIME_SLOTS = ["9:00", "10:30", "11:00", "13:00", "14:30", "16:00"];
 const STEP_DURATIONS = [3200, 3800, 3500, 3000];
 
 const CALENDAR_DAYS = [
@@ -38,10 +38,10 @@ const CALENDAR_DAYS = [
 // ─── Animated Booking Widget ──────────────────────────────────────────────────
 
 function BookingWidget() {
-  const [step,            setStep]            = useState(0);
+  const [step, setStep] = useState(0);
   const [selectedService, setSelectedService] = useState(0);
-  const [selectedSlot,    setSelectedSlot]    = useState(2);
-  const [animIn,          setAnimIn]          = useState(true);
+  const [selectedSlot, setSelectedSlot] = useState(2);
+  const [animIn, setAnimIn] = useState(true);
 
   useEffect(() => {
     const t = setTimeout(() => {
@@ -70,9 +70,9 @@ function BookingWidget() {
       <div className="bg-white px-5 py-3 border-b border-gray-100 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <div className="w-7 h-7 rounded-xl bg-[#101921] flex items-center justify-center">
-            <span className="text-white font-black text-[11px]">P</span>
+            <span className="text-white font-extrabold text-[11px]">P</span>
           </div>
-          <span className="text-[13px] font-black text-[#101921]">palama</span>
+          <span className="text-[13px] font-extrabold text-[#101921]">palama</span>
         </div>
         <div className="w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center">
           <User className="w-3.5 h-3.5 text-gray-400" />
@@ -86,7 +86,7 @@ function BookingWidget() {
             <React.Fragment key={lbl}>
               <div className="flex items-center gap-1">
                 <div
-                  className="w-5 h-5 rounded-full flex items-center justify-center text-[9px] font-black transition-all duration-500"
+                  className="w-5 h-5 rounded-full flex items-center justify-center text-[9px] font-extrabold transition-all duration-500"
                   style={{
                     background: step > i ? "#107050" : step === i ? "#101921" : "#E5E7EB",
                     color: step >= i ? "white" : "#9CA3AF",
@@ -127,7 +127,7 @@ function BookingWidget() {
         {/* Step 0 — Service */}
         {step === 0 && (
           <div>
-            <h3 className="text-[13px] font-black text-[#101921] mb-3">Choose a service</h3>
+            <h3 className="text-[13px] font-extrabold text-[#101921] mb-3">Choose a service</h3>
             <div className="flex flex-col gap-2">
               {SERVICES.map((s, i) => (
                 <div
@@ -135,7 +135,7 @@ function BookingWidget() {
                   className="flex items-center gap-3 p-3 rounded-2xl border-2 cursor-pointer transition-all duration-200"
                   style={{
                     borderColor: selectedService === i ? s.color : "transparent",
-                    background:  selectedService === i ? `${s.color}08` : "#F9FAFB",
+                    background: selectedService === i ? `${s.color}08` : "#F9FAFB",
                   }}
                   onClick={() => setSelectedService(i)}
                 >
@@ -143,10 +143,10 @@ function BookingWidget() {
                     <Zap className="w-4 h-4" style={{ color: s.color }} />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <div className="text-[11px] font-black text-[#101921] truncate">{s.name}</div>
+                    <div className="text-[11px] font-extrabold text-[#101921] truncate">{s.name}</div>
                     <div className="text-[10px] text-gray-400 font-medium">{s.duration}</div>
                   </div>
-                  <span className="text-[12px] font-black" style={{ color: s.color }}>{s.price}</span>
+                  <span className="text-[12px] font-extrabold" style={{ color: s.color }}>{s.price}</span>
                 </div>
               ))}
             </div>
@@ -156,7 +156,7 @@ function BookingWidget() {
         {/* Step 1 — Date & Time */}
         {step === 1 && (
           <div>
-            <h3 className="text-[13px] font-black text-[#101921] mb-3">Pick a date & time</h3>
+            <h3 className="text-[13px] font-extrabold text-[#101921] mb-3">Pick a date & time</h3>
             <div className="flex gap-1.5 mb-4">
               {CALENDAR_DAYS.map((day) => (
                 <div
@@ -165,7 +165,7 @@ function BookingWidget() {
                   style={{ background: day.active ? "#101921" : day.avail ? "#F0FAF4" : "#F3F4F6", opacity: day.avail ? 1 : 0.4 }}
                 >
                   <span className="text-[8px] font-bold" style={{ color: day.active ? "rgba(255,255,255,0.6)" : "#9CA3AF" }}>{day.d}</span>
-                  <span className="text-[11px] font-black" style={{ color: day.active ? "white" : day.avail ? "#101921" : "#9CA3AF" }}>{day.n}</span>
+                  <span className="text-[11px] font-extrabold" style={{ color: day.active ? "white" : day.avail ? "#101921" : "#9CA3AF" }}>{day.n}</span>
                 </div>
               ))}
             </div>
@@ -177,7 +177,7 @@ function BookingWidget() {
                   style={{ background: selectedSlot === i ? "#107050" : "#F0FAF4" }}
                   onClick={() => setSelectedSlot(i)}
                 >
-                  <span className="text-[10px] font-black" style={{ color: selectedSlot === i ? "white" : "#107050" }}>{slot}</span>
+                  <span className="text-[10px] font-extrabold" style={{ color: selectedSlot === i ? "white" : "#107050" }}>{slot}</span>
                 </div>
               ))}
             </div>
@@ -187,17 +187,17 @@ function BookingWidget() {
         {/* Step 2 — Confirm */}
         {step === 2 && (
           <div>
-            <h3 className="text-[13px] font-black text-[#101921] mb-3">Review your booking</h3>
+            <h3 className="text-[13px] font-extrabold text-[#101921] mb-3">Review your booking</h3>
             <div className="bg-[#F0FAF4] rounded-2xl p-3 mb-3">
               <div className="flex items-center gap-2 mb-2.5">
                 <div className="w-8 h-8 rounded-xl bg-[#107050]/15 flex items-center justify-center">
                   <Zap className="w-4 h-4 text-[#107050]" />
                 </div>
                 <div>
-                  <div className="text-[11px] font-black text-[#101921]">{SERVICES[selectedService].name}</div>
+                  <div className="text-[11px] font-extrabold text-[#101921]">{SERVICES[selectedService].name}</div>
                   <div className="text-[10px] text-gray-400">{SERVICES[selectedService].duration}</div>
                 </div>
-                <span className="ml-auto text-[12px] font-black text-[#107050]">{SERVICES[selectedService].price}</span>
+                <span className="ml-auto text-[12px] font-extrabold text-[#107050]">{SERVICES[selectedService].price}</span>
               </div>
               <div className="border-t border-[#107050]/10 pt-2 flex gap-3">
                 <div className="flex items-center gap-1">
@@ -210,7 +210,7 @@ function BookingWidget() {
                 </div>
               </div>
             </div>
-            <button className="w-full py-3 rounded-2xl text-[12px] font-black text-white" style={{ background: "#101921" }}>
+            <button className="w-full py-3 rounded-2xl text-[12px] font-extrabold text-white" style={{ background: "#101921" }}>
               Confirm Booking
             </button>
           </div>
@@ -222,10 +222,10 @@ function BookingWidget() {
             <div className="w-16 h-16 rounded-full flex items-center justify-center mb-3" style={{ background: "#107050" }}>
               <CheckCircle2 className="w-8 h-8 text-white" strokeWidth={2.5} />
             </div>
-            <h3 className="text-[14px] font-black text-[#101921] mb-1">Booking confirmed! 🎉</h3>
+            <h3 className="text-[14px] font-extrabold text-[#101921] mb-1">Booking confirmed! 🎉</h3>
             <p className="text-[10px] text-gray-400 font-medium mb-4 max-w-[200px]">A confirmation has been sent to your email.</p>
             <div className="bg-[#F0FAF4] rounded-2xl p-3 w-full text-left">
-              <div className="text-[10px] font-black text-[#107050] mb-1.5">Booking summary</div>
+              <div className="text-[10px] font-extrabold text-[#107050] mb-1.5">Booking summary</div>
               <div className="text-[11px] font-bold text-[#101921]">{SERVICES[selectedService].name}</div>
               <div className="text-[10px] text-gray-400 mt-0.5">Wed, Jun 16 · {TIME_SLOTS[selectedSlot]}</div>
             </div>
@@ -260,7 +260,7 @@ function OnlineBookingOverlay() {
           ))}
         </div>
         <div>
-          <div className="text-[10px] font-black text-[#101921]">+2,400 bookings today</div>
+          <div className="text-[10px] font-extrabold text-[#101921]">+2,400 bookings today</div>
           <div className="flex items-center gap-0.5">
             {[1, 2, 3, 4, 5].map((s) => (
               <Star key={s} className="w-2.5 h-2.5 fill-amber-400 text-amber-400" />
@@ -275,7 +275,7 @@ function OnlineBookingOverlay() {
       >
         <Globe className="w-3.5 h-3.5" />
         <div>
-          <div className="text-[10px] font-black">Booked online</div>
+          <div className="text-[10px] font-extrabold">Booked online</div>
           <div className="text-[9px] text-white/70">via your website</div>
         </div>
       </div>
@@ -328,8 +328,8 @@ export default function OnlineBookingSection() {
         },
       ]}
       stats={[
-        { value: "70%",   label: "fewer no-shows" },
-        { value: "24/7",  label: "online availability" },
+        { value: "70%", label: "fewer no-shows" },
+        { value: "24/7", label: "online availability" },
         { value: "2 min", label: "average booking time" },
       ]}
     />

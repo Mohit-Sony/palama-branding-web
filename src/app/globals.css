@@ -33,7 +33,7 @@
   --font-sans: "SUSE", var(--font-inter), system-ui, sans-serif;
   --font-serif: var(--font-outfit), serif;
 
-  --spacing-container: 1280px;
+  --spacing-container: 1400px;
   --spacing-section: 120px;
   --spacing-section-lg: 160px;
 }
@@ -43,8 +43,18 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
+  cursor: url('/assets/cursor.svg') 0 0, auto;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-sans);
+}
+
+button, a, .cursor-pointer {
+  cursor: url('/assets/cursor-hover.svg') 0 0, pointer !important;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+input, textarea, [contenteditable="true"], p, span, h1, h2, h3, h4, h5, h6, li {
+  cursor: url('/assets/cursor-text.svg') 0 0, text !important;
 }

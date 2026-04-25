@@ -206,7 +206,7 @@ function CRMPreview() {
           className="flex items-center gap-2 bg-white rounded-lg px-2 py-1.5 shadow-sm"
         >
           <div
-            className={`w-6 h-6 rounded-full ${c.bg} flex-shrink-0 flex items-center justify-center text-[8px] font-black text-gray-600`}
+            className={`w-6 h-6 rounded-full ${c.bg} flex-shrink-0 flex items-center justify-center text-[8px] font-extrabold text-gray-600`}
           >
             {c.name[0]}
           </div>
@@ -256,7 +256,7 @@ function AnalyticsPreview() {
         <span className="text-[9px] font-semibold text-gray-500">
           This week
         </span>
-        <span className="text-[10px] font-black text-[#7C3AED]">▲ 18%</span>
+        <span className="text-[10px] font-extrabold text-[#7C3AED]">▲ 18%</span>
       </div>
       <div className="flex items-end gap-1 h-12">
         {bars.map((h, i) => (
@@ -313,7 +313,7 @@ function ReviewsPreview() {
         {[1, 2, 3, 4, 5].map((s) => (
           <Star key={s} className="w-3 h-3 fill-amber-400 text-amber-400" />
         ))}
-        <span className="text-[10px] font-black text-gray-800 ml-1">4.9</span>
+        <span className="text-[10px] font-extrabold text-gray-800 ml-1">4.9</span>
       </div>
       <div className="bg-white rounded-lg p-2 shadow-sm">
         <p className="text-[9px] font-medium text-gray-600 italic leading-snug">
@@ -385,7 +385,7 @@ function OnlineBookingPreview() {
             key={d}
             className="bg-[#1D4ED8]/10 rounded-md px-1 py-1.5 text-center"
           >
-            <span className="text-[8px] font-black text-[#1D4ED8]">{d}</span>
+            <span className="text-[8px] font-extrabold text-[#1D4ED8]">{d}</span>
           </div>
         ))}
       </div>
@@ -431,7 +431,7 @@ function SecurityPreview() {
             key={badge}
             className="bg-green-50 rounded-md py-1 text-center border border-green-100"
           >
-            <span className="text-[8px] font-black text-[#065F46]">
+            <span className="text-[8px] font-extrabold text-[#065F46]">
               {badge}
             </span>
           </div>
@@ -490,7 +490,7 @@ function FeatureFloatingCard({
             />
           </div>
           <span
-            className="text-[10px] font-black tracking-wide"
+            className="text-[10px] font-extrabold tracking-wide"
             style={{ color: card.feature.color }}
           >
             {card.feature.label}
@@ -514,17 +514,17 @@ function seededRandom(seed: number) {
 function generateCards(): FloatingCard[] {
   // Fixed positions — hugging left/right edges, clear of the central headline zone
   const positions = [
-    { x: 1,  y: 3  },  // top-left
-    { x: 1,  y: 38 },  // mid-left
-    { x: 2,  y: 72 },  // bottom-left
-    { x: 20, y: 6  },  // upper-left-inner
+    { x: 1, y: 3 },  // top-left
+    { x: 1, y: 38 },  // mid-left
+    { x: 2, y: 72 },  // bottom-left
+    { x: 20, y: 6 },  // upper-left-inner
     { x: 18, y: 80 },  // lower-left-inner
-    { x: 79, y: 3  },  // top-right
+    { x: 79, y: 3 },  // top-right
     { x: 79, y: 38 },  // mid-right
     { x: 79, y: 72 },  // bottom-right
-    { x: 61, y: 6  },  // upper-right-inner
+    { x: 61, y: 6 },  // upper-right-inner
     { x: 62, y: 80 },  // lower-right-inner
-    { x: 41, y: 1  },  // top-centre (narrow peek above headline)
+    { x: 41, y: 1 },  // top-centre (narrow peek above headline)
     { x: 38, y: 88 },  // very bottom centre
   ];
 
@@ -638,7 +638,7 @@ export default function FeaturesHero() {
                     />
                   </div>
                   <span
-                    className="text-[10px] font-black tracking-wide"
+                    className="text-[10px] font-extrabold tracking-wide"
                     style={{ color: card.feature.color }}
                   >
                     {card.feature.label}
@@ -727,7 +727,7 @@ export default function FeaturesHero() {
               { count: "4.9★", label: "App rating" },
             ].map((stat) => (
               <div key={stat.label} className="flex items-center gap-2">
-                <span className="text-[22px] font-black text-palama-navy tracking-tight">
+                <span className="text-[22px] font-extrabold text-palama-navy tracking-tight">
                   {stat.count}
                 </span>
                 <span className="text-[13px] font-medium text-palama-muted">

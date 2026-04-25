@@ -291,7 +291,7 @@ export default function FeatureSectionLayout({
           {stats.map((s) => (
             <div key={s.label}>
               <div
-                className="text-[22px] font-black tracking-tight leading-none"
+                className="text-[22px] font-extrabold tracking-tight leading-none"
                 style={{ color: "#101921" }}
               >
                 {s.value}
@@ -308,11 +308,10 @@ export default function FeatureSectionLayout({
 
   const visualCol = (
     <div
-      className={`flex-1 flex items-center relative pt-8 pb-12 ${
-        isFlipped
+      className={`flex-1 flex items-center relative pt-8 pb-12 ${isFlipped
           ? "justify-center lg:justify-start pl-0 pr-8"
           : "justify-center lg:justify-end pl-8"
-      }`}
+        }`}
     >
       {visualNode}
       {/* Optional floating overlays (badges, chips) */}
@@ -371,9 +370,8 @@ export default function FeatureSectionLayout({
 
         <div className="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8">
           <div
-            className={`flex flex-col ${
-              isFlipped ? "lg:flex-row-reverse" : "lg:flex-row"
-            } items-center gap-16 lg:gap-24`}
+            className={`flex flex-col ${isFlipped ? "lg:flex-row-reverse" : "lg:flex-row"
+              } items-center gap-16 lg:gap-24`}
           >
             {visualCol}
             {contentCol}

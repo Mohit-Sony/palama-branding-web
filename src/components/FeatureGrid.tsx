@@ -1,14 +1,13 @@
-"use client";
-
-import { Calendar, CreditCard, Users, Package, BarChart3, UserPlus, ChevronRight } from "lucide-react";
+import Link from "next/link";
+import { Calendar, CreditCard, Users, Package, BarChart3, UserPlus, ChevronRight, ArrowRight } from "lucide-react";
 
 export default function FeatureGrid() {
   return (
     <section className="py-24 md:py-32 bg-[#F9FAFB]">
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-(--spacing-container) mx-auto px-6">
         
         <div className="text-center max-w-4xl mx-auto mb-20">
-          <h2 className="text-4xl md:text-[56px] font-bold text-palama-navy mb-6 tracking-tight leading-[1.1]">
+          <h2 className="text-4xl md:text-[56px] font-extrabold text-palama-navy mb-6 tracking-tight leading-[1.1]">
             Transform Your Setup with Our Powerful Features
           </h2>
           <p className="text-lg md:text-xl text-palama-muted leading-relaxed font-medium max-w-2xl mx-auto">
@@ -20,7 +19,7 @@ export default function FeatureGrid() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[340px]">
           
           {/* Feature 1: Appointment Scheduling (Wide) */}
-          <div className="relative bg-[#F4F6F4] rounded-[32px] overflow-hidden group md:col-span-2 p-8 transition-all hover:shadow-[0_20px_40px_-12px_rgba(0,0,0,0.1)] border border-transparent hover:border-white">
+          <Link href="/features" className="relative bg-[#F4F6F4] rounded-[32px] overflow-hidden group md:col-span-2 p-8 transition-all hover:shadow-[0_20px_40px_-12px_rgba(0,0,0,0.1)] border border-transparent hover:border-white">
             <div className="relative z-10 w-1/2">
               <h3 className="text-2xl font-bold text-gray-900 mb-3 tracking-tight">Appointment scheduling</h3>
               <p className="text-[15px] text-gray-600 font-medium mb-6">Create appointments effortlessly with our powerful widget. Beautiful calendar interface inside.</p>
@@ -43,10 +42,10 @@ export default function FeatureGrid() {
                 ))}
               </div>
             </div>
-          </div>
+          </Link>
 
           {/* Feature 2: Point of Sale (Tall) */}
-          <div className="relative bg-[#FCF3F6] rounded-[32px] overflow-hidden group lg:row-span-2 p-8 transition-all hover:shadow-[0_20px_40px_-12px_rgba(0,0,0,0.1)] border border-transparent hover:border-white">
+          <Link href="/features" className="relative bg-[#FCF3F6] rounded-[32px] overflow-hidden group lg:row-span-2 p-8 transition-all hover:shadow-[0_20px_40px_-12px_rgba(0,0,0,0.1)] border border-transparent hover:border-white">
             <div className="relative z-10 mb-8">
               <h3 className="text-2xl font-bold text-gray-900 mb-3 tracking-tight">Point of sale (POS)</h3>
               <p className="text-[15px] text-gray-600 font-medium">A seamless checkout experience for you and your clients.</p>
@@ -77,10 +76,10 @@ export default function FeatureGrid() {
                 </div>
               </div>
             </div>
-          </div>
+          </Link>
 
           {/* Feature 3: Client CRM */}
-          <div className="relative bg-[#EBEDF9] rounded-[32px] overflow-hidden group p-8 transition-all hover:shadow-[0_20px_40px_-12px_rgba(0,0,0,0.1)] border border-transparent hover:border-white">
+          <Link href="/features" className="relative bg-[#EBEDF9] rounded-[32px] overflow-hidden group p-8 transition-all hover:shadow-[0_20px_40px_-12px_rgba(0,0,0,0.1)] border border-transparent hover:border-white">
             <div className="relative z-10 pr-[40%]">
               <h3 className="text-2xl font-bold text-gray-900 mb-3 tracking-tight">Client CRM</h3>
               <p className="text-[14px] text-gray-600 font-medium">Build strong relationships.</p>
@@ -96,10 +95,10 @@ export default function FeatureGrid() {
                 ))}
               </div>
             </div>
-          </div>
+          </Link>
 
           {/* Feature 4: Product Inventory */}
-          <div className="relative bg-[#FEF3EB] rounded-[32px] overflow-hidden group p-8 transition-all hover:shadow-[0_20px_40px_-12px_rgba(0,0,0,0.1)] border border-transparent hover:border-white">
+          <Link href="/features" className="relative bg-[#FEF3EB] rounded-[32px] overflow-hidden group p-8 transition-all hover:shadow-[0_20px_40px_-12px_rgba(0,0,0,0.1)] border border-transparent hover:border-white">
             <div className="relative z-10 w-2/3">
               <h3 className="text-2xl font-bold text-gray-900 mb-3 tracking-tight">Inventory</h3>
               <p className="text-[14px] text-gray-600 font-medium">Manage stock seamlessly.</p>
@@ -120,10 +119,10 @@ export default function FeatureGrid() {
                   </div>
                </div>
             </div>
-          </div>
+          </Link>
 
           {/* Feature 5: Financial Reporting (Wide) */}
-          <div className="relative bg-[#F4F0FF] rounded-[32px] overflow-hidden group md:col-span-2 p-8 transition-all hover:shadow-[0_20px_40px_-12px_rgba(0,0,0,0.1)] border border-transparent hover:border-white flex flex-col justify-center">
+          <Link href="/features" className="relative bg-[#F4F0FF] rounded-[32px] overflow-hidden group md:col-span-2 p-8 transition-all hover:shadow-[0_20px_40px_-12px_rgba(0,0,0,0.1)] border border-transparent hover:border-white flex flex-col justify-center">
             <div className="relative z-10 w-1/2">
               <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm">
                 <BarChart3 className="w-6 h-6 text-purple-600" />
@@ -139,10 +138,10 @@ export default function FeatureGrid() {
                  </div>
                ))}
             </div>
-          </div>
+          </Link>
 
           {/* Feature 6: Staff Management */}
-          <div className="relative bg-[#E6F7F5] rounded-[32px] overflow-hidden group p-8 transition-all hover:shadow-[0_20px_40px_-12px_rgba(0,0,0,0.1)] border border-transparent hover:border-white">
+          <Link href="/features" className="relative bg-[#E6F7F5] rounded-[32px] overflow-hidden group p-8 transition-all hover:shadow-[0_20px_40px_-12px_rgba(0,0,0,0.1)] border border-transparent hover:border-white">
             <div className="relative z-10 mb-6">
               <h3 className="text-2xl font-bold text-gray-900 mb-2 tracking-tight">Staffing</h3>
               <p className="text-[14px] text-gray-600 font-medium">Manage shifts and teams.</p>
@@ -156,8 +155,16 @@ export default function FeatureGrid() {
                 <div className="w-12 h-12 rounded-full border-4 border-[#E6F7F5] bg-white flex items-center justify-center text-xs font-bold text-gray-400 z-0 shadow-md">+5</div>
               </div>
             </div>
-          </div>
+          </Link>
 
+        </div>
+
+        <div className="mt-16 flex justify-center">
+          <Link href="/features">
+            <button className="bg-palama-navy text-white px-10 py-5 rounded-full font-bold text-lg hover:bg-opacity-90 transition-all flex items-center gap-3 shadow-xl active:scale-95">
+              View all features <ArrowRight className="w-5 h-5" />
+            </button>
+          </Link>
         </div>
       </div>
     </section>

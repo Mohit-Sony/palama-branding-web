@@ -1,26 +1,28 @@
-import React from "react";
+import Link from "next/link";
 import { ArrowRight, CheckCircle, Star } from "lucide-react";
 
 export default function ValuePropsSection() {
   return (
     <section className="py-24 bg-white overflow-hidden">
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-(--spacing-container) mx-auto px-6">
         
         {/* Section Header */}
         <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
-          <h2 className="text-4xl md:text-[56px] font-bold text-palama-navy tracking-tight max-w-3xl leading-[1.1]">
+          <h2 className="text-4xl md:text-[56px] font-extrabold text-palama-navy tracking-tight max-w-3xl leading-[1.1]">
             Unrivaled value. Instant transformation.
           </h2>
-          <button className="px-6 py-3 rounded-full border border-gray-200 text-sm font-bold flex items-center gap-2 hover:bg-gray-50 transition-colors w-fit">
-            Learn more <ArrowRight className="w-4 h-4" />
-          </button>
+          <Link href="/features" className="cursor-pointer">
+            <button className="px-6 py-3 rounded-full border border-gray-200 text-sm font-bold flex items-center gap-2 hover:bg-gray-50 transition-colors w-fit cursor-pointer">
+              Learn more <ArrowRight className="w-4 h-4" />
+            </button>
+          </Link>
         </div>
 
         {/* Value Box Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
           
           {/* Box 1: 7 Days to transform */}
-          <div className="bg-gradient-to-br from-[#E8F8F5] to-[#A3E4D7] rounded-[2rem] p-8 md:p-12 h-[450px] relative overflow-hidden group shadow-sm transition-shadow hover:shadow-xl">
+          <Link href="/features" className="bg-gradient-to-br from-[#E8F8F5] to-[#A3E4D7] rounded-[2rem] p-8 md:p-12 h-[450px] relative overflow-hidden group shadow-sm transition-shadow hover:shadow-xl">
             <h3 className="text-3xl font-bold text-[#0E6251] mb-4 max-w-[300px] relative z-10 leading-tight">
               7 days to transform your portal live and ready
             </h3>
@@ -38,7 +40,7 @@ export default function ValuePropsSection() {
               </div>
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-full bg-[#D1F2EB] flex items-center justify-center shrink-0">
-                  <CheckCircle className="text-[#1ABC9C] w-6 h-6" />
+                   <CheckCircle className="text-[#1ABC9C] w-6 h-6" />
                 </div>
                 <div>
                   <p className="font-extrabold text-gray-900 text-xl tracking-tight">Portal is Live!</p>
@@ -46,10 +48,10 @@ export default function ValuePropsSection() {
                 </div>
               </div>
             </div>
-          </div>
+          </Link>
 
           {/* Box 2: Dedicated Support */}
-          <div className="bg-gradient-to-br from-[#EBF5FB] to-[#A9CCE3] rounded-[2rem] p-8 md:p-12 h-[450px] relative overflow-hidden group shadow-sm transition-shadow hover:shadow-xl">
+          <Link href="/contact-sales" className="bg-gradient-to-br from-[#EBF5FB] to-[#A9CCE3] rounded-[2rem] p-8 md:p-12 h-[450px] relative overflow-hidden group shadow-sm transition-shadow hover:shadow-xl">
             <h3 className="text-3xl font-bold text-[#154360] mb-4 max-w-[320px] relative z-10 leading-tight">
               Dedicated support always. We're with you every step
             </h3>
@@ -75,10 +77,10 @@ export default function ValuePropsSection() {
                  </div>
                </div>
             </div>
-          </div>
+          </Link>
 
           {/* Box 3: Customised Portal */}
-          <div className="bg-[#FAFAFA] border border-gray-100 rounded-[2rem] p-8 md:p-12 h-[450px] relative overflow-hidden group shadow-sm transition-shadow hover:shadow-xl">
+          <Link href="/features" className="bg-[#FAFAFA] border border-gray-100 rounded-[2rem] p-8 md:p-12 h-[450px] relative overflow-hidden group shadow-sm transition-shadow hover:shadow-xl">
             <h3 className="text-3xl font-bold text-gray-900 mb-4 max-w-[380px] relative z-10 leading-tight">
               Your Business, Your Terms, Customised Portal, Your Identity
             </h3>
@@ -127,10 +129,10 @@ export default function ValuePropsSection() {
               </div>
 
             </div>
-          </div>
+          </Link>
 
           {/* Box 4: Crafted for excellence */}
-          <div className="rounded-[2rem] h-[450px] relative overflow-hidden group bg-gray-900 text-white shadow-sm transition-shadow hover:shadow-xl">
+          <Link href="/features" className="rounded-[2rem] h-[450px] relative overflow-hidden group bg-gray-900 text-white shadow-sm transition-shadow hover:shadow-xl">
             <div className="absolute inset-0 transition-transform duration-1000 group-hover:scale-105 group-hover:rotate-1">
               <img 
                 src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1200&q=80" 
@@ -153,7 +155,7 @@ export default function ValuePropsSection() {
                 Crafted for excellence where every interaction delights.
               </h3>
             </div>
-          </div>
+          </Link>
 
         </div>
       </div>

@@ -5,19 +5,45 @@ import Link from "next/link";
 const footerLinks = [
   {
     title: "Product",
-    links: ["Booking software", "Point of sale", "Client CRM", "Marketing tools", "Inventory management", "Reporting & analytics"],
+    links: [
+      { name: "Features", href: "/features" },
+      { name: "Pricing", href: "/pricing" },
+      { name: "Booking software", href: "/features#scheduling" },
+      { name: "Point of sale", href: "/features#payments" },
+      { name: "Client CRM", href: "/features#client-management" },
+      { name: "Marketing tools", href: "/features#marketing" },
+    ],
   },
   {
     title: "Company",
-    links: ["About us", "Careers", "Contact us", "Press", "Partnerships", "Palama Academy"],
+    links: [
+      { name: "About us", href: "#" },
+      { name: "Careers", href: "#" },
+      { name: "Contact us", href: "#" },
+      { name: "Partnerships", href: "#" },
+      { name: "Blog", href: "#" },
+    ],
   },
   {
     title: "Resources",
-    links: ["Help center", "Blog", "Sitemap", "Terms of service", "Privacy policy", "GDPR"],
+    links: [
+      { name: "Help center", href: "/help-center" },
+      { name: "Terms of service", href: "/terms" },
+      { name: "Privacy policy", href: "/privacy" },
+      { name: "GDPR", href: "/gdpr" },
+      { name: "Sitemap", href: "#" },
+    ],
   },
   {
     title: "Industries",
-    links: ["Hair salons", "Barbershops", "Nail salons", "Skin care", "Spas & wellness", "Massage therapy"],
+    links: [
+      { name: "Hair salons", href: "/business-types/hair-salons" },
+      { name: "Barbershops", href: "/business-types/barbershops" },
+      { name: "Nail salons", href: "/business-types/nail-salons" },
+      { name: "Skin care", href: "/business-types/skin-care" },
+      { name: "Spas & wellness", href: "/business-types/spas-wellness" },
+      { name: "Massage therapy", href: "/business-types/massage-therapy" },
+    ],
   },
 ];
 
@@ -32,8 +58,8 @@ export default function Footer() {
               <ul className="space-y-4">
                 {column.links.map((link, j) => (
                   <li key={j}>
-                    <Link href="#" className="text-gray-400 hover:text-white transition-colors text-sm font-medium">
-                      {link}
+                    <Link href={link.href} className="text-gray-400 hover:text-white transition-colors text-sm font-medium">
+                      {link.name}
                     </Link>
                   </li>
                 ))}
@@ -44,7 +70,7 @@ export default function Footer() {
 
         <div className="pt-12 border-t border-gray-800 flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="flex flex-col items-center md:items-start gap-4">
-            <img src="/assets/palama-logo.svg" alt="Palama" className="h-8 w-auto brightness-0 invert" />
+            <img src="/assets/palama-logo-white.svg" alt="Palama" className="h-8 w-auto" />
             <p className="text-sm text-gray-500">© 2026 Palama. All rights reserved.</p>
           </div>
 

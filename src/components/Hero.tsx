@@ -2,27 +2,32 @@
 
 import Image from "next/image";
 import { Play } from "lucide-react";
+import Link from "next/link";
 
 export default function Hero() {
   return (
     <section className="relative pt-20 pb-8 sm:pt-24 sm:pb-12 md:pt-32 md:pb-16 overflow-hidden bg-white">
       <div className="max-w-(--spacing-container) mx-auto px-4 sm:px-6 text-center">
-        <h1 className="text-[28px] sm:text-4xl md:text-6xl lg:text-[80px] font-bold text-palama-navy leading-[1.1] mb-4 sm:mb-5 md:mb-6 max-w-5xl mx-auto tracking-tight">
+        <h1 className="text-[28px] sm:text-4xl md:text-6xl lg:text-[80px] font-extrabold text-palama-navy leading-[1.1] mb-4 sm:mb-5 md:mb-6 max-w-5xl mx-auto tracking-tight">
           Build Your Brand.
         </h1>
         <p className="text-sm sm:text-base md:text-lg lg:text-[22px] text-palama-navy mb-7 sm:mb-8 md:mb-10 max-w-2xl mx-auto leading-relaxed font-bold">
           Get a powerful, custom-branded booking system that works exclusively for you. Own your data, own your clients, and manage your operations seamlessly.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-10 sm:mb-14 md:mb-16">
-          <button className="w-full sm:w-auto bg-palama-navy text-white px-7 sm:px-8 md:px-10 py-3 sm:py-[14px] md:py-[18px] rounded-full text-[14px] sm:text-[15px] md:text-[17px] font-bold hover:bg-opacity-90 transition-all active:scale-95 shadow-lg shadow-black/10">
-            Get started now
-          </button>
-          <button className="w-full sm:w-auto bg-white text-palama-navy border border-gray-200 px-7 sm:px-8 md:px-10 py-3 sm:py-[14px] md:py-[18px] rounded-full text-[14px] sm:text-[15px] md:text-[17px] font-bold hover:bg-gray-50 transition-all flex items-center justify-center gap-2 sm:gap-3 active:scale-95 shadow-sm">
-            <div className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 rounded-full bg-palama-navy flex items-center justify-center text-white shrink-0">
-              <Play className="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4 fill-current ml-0.5" />
-            </div>
-            Watch an overview
-          </button>
+          <Link href="/pricing" className="w-full sm:w-auto cursor-pointer">
+            <button className="w-full bg-palama-navy text-white px-7 sm:px-8 md:px-10 py-3 sm:py-[14px] md:py-[18px] rounded-full text-[14px] sm:text-[15px] md:text-[17px] font-extrabold hover:bg-opacity-90 transition-all active:scale-95 shadow-lg shadow-black/10 cursor-pointer">
+              Get started now
+            </button>
+          </Link>
+          <Link href="/features" className="w-full sm:w-auto cursor-pointer">
+            <button className="w-full bg-white text-palama-navy border border-gray-200 px-7 sm:px-8 md:px-10 py-3 sm:py-[14px] md:py-[18px] rounded-full text-[14px] sm:text-[15px] md:text-[17px] font-bold hover:bg-gray-50 transition-all flex items-center justify-center gap-2 sm:gap-3 active:scale-95 shadow-sm cursor-pointer">
+              <div className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 rounded-full bg-palama-navy flex items-center justify-center text-white shrink-0">
+                <Play className="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4 fill-current ml-0.5" />
+              </div>
+              Watch an overview
+            </button>
+          </Link>
         </div>
 
         <div className="relative max-w-[1200px] mx-auto px-2 sm:px-4 mt-6 md:mt-16">

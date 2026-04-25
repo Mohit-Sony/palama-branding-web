@@ -255,7 +255,7 @@ function ProductCard({ label, type, Icon, tagline, bg, textColor, children, dela
 export default function PlatformIntro1() {
   return (
     <section className="py-16 sm:py-24 md:py-32 bg-slate-50 overflow-hidden border-t border-slate-100">
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-(--spacing-container) mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* ── Overture ── */}
         <div className="mb-16 md:mb-24">
