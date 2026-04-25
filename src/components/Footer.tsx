@@ -44,7 +44,7 @@ export default function Footer() {
 
         <div className="pt-12 border-t border-gray-800 flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="flex flex-col items-center md:items-start gap-4">
-            <span className="text-2xl font-bold tracking-tighter">palama</span>
+            <img src="/assets/palama-logo.svg" alt="Palama" className="h-8 w-auto brightness-0 invert" />
             <p className="text-sm text-gray-500">© 2026 Palama. All rights reserved.</p>
           </div>
 

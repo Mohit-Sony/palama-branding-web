@@ -21,8 +21,7 @@ export default function Hero1() {
           transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           className="text-4xl sm:text-6xl md:text-7xl lg:text-[84px] font-bold text-palama-navy leading-[1.05] mb-6 max-w-5xl mx-auto tracking-tight"
         >
-          Build Your Brand, <br className="hidden sm:block" />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-palama-navy via-slate-700 to-palama-navy">Not a Marketplace.</span>
+          Build Your Brand.
         </motion.h1>
 
         <motion.p

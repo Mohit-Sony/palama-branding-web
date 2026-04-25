@@ -25,7 +25,7 @@ const row2 = [
 const RowItem = ({ item }: { item: { name: string, image: string } }) => (
   <div className="px-1.5 sm:px-2 md:px-3">
     <Link
-      href="#"
+      href={`/business-types/${item.name.toLowerCase().replace(/ /g, '-')}`}
       className="relative block shrink-0 overflow-hidden rounded-[14px] sm:rounded-[18px] md:rounded-[20px] group shadow-sm hover:shadow-xl transition-all duration-300"
       style={{ height: 'var(--card-h)', width: 'var(--card-w)' }}
     >
@@ -58,7 +58,8 @@ export default function BusinessTypes() {
       </div>
 
       {/* CSS custom properties for card sizes at each breakpoint */}
-      <style dangerouslySetInnerHTML={{__html: `
+      <style dangerouslySetInnerHTML={{
+        __html: `
         :root {
           --card-h: 140px;
           --card-w: 185px;

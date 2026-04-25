@@ -8,7 +8,7 @@ export default function Hero() {
     <section className="relative pt-20 pb-8 sm:pt-24 sm:pb-12 md:pt-32 md:pb-16 overflow-hidden bg-white">
       <div className="max-w-(--spacing-container) mx-auto px-4 sm:px-6 text-center">
         <h1 className="text-[28px] sm:text-4xl md:text-6xl lg:text-[80px] font-bold text-palama-navy leading-[1.1] mb-4 sm:mb-5 md:mb-6 max-w-5xl mx-auto tracking-tight">
-          Build Your Brand, Not a Marketplace.
+          Build Your Brand.
         </h1>
         <p className="text-sm sm:text-base md:text-lg lg:text-[22px] text-palama-navy mb-7 sm:mb-8 md:mb-10 max-w-2xl mx-auto leading-relaxed font-bold">
           Get a powerful, custom-branded booking system that works exclusively for you. Own your data, own your clients, and manage your operations seamlessly.

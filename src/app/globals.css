@@ -3,6 +3,11 @@
 :root {
   --background: #ffffff;
   --foreground: #101921;
+  --brand-pink: #FB9EBB;
+  --brand-blue: #0204A6;
+  --brand-pink-light: #FFCEE7;
+  --brand-blue-light: #3C3EEF;
+  --brand-bg-subtle: #F0F4FF;
   --palama-navy: #101921;
   --palama-muted: #5E6C84;
   --palama-light-bg: #F9FAFA;
@@ -11,11 +16,21 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-brand-pink: var(--brand-pink);
+  --color-brand-blue: var(--brand-blue);
+  --color-brand-pink-light: var(--brand-pink-light);
+  --color-brand-blue-light: var(--brand-blue-light);
+  --color-brand-bg-subtle: var(--brand-bg-subtle);
+  
   --color-palama-navy: var(--palama-navy);
   --color-palama-muted: var(--palama-muted);
   --color-palama-light-bg: var(--palama-light-bg);
 
-  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --radius-xl: 1.5rem;
+  --radius-2xl: 2.5rem;
+  --radius-3xl: 3.5rem;
+
+  --font-sans: "SUSE", var(--font-inter), system-ui, sans-serif;
   --font-serif: var(--font-outfit), serif;
 
   --spacing-container: 1280px;
@@ -30,45 +45,6 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-h1,
-h2,
-h3 {
-  letter-spacing: -0.01em;
-  font-weight: 700;
-}
-
-@keyframes float {
-
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-15px);
-  }
-}
-
-@keyframes bounce-slow {
-
-  0%,
-  100% {
-    transform: translateY(0) scale(1);
-  }
-
-  50% {
-    transform: translateY(-8px) scale(1.02);
-  }
-}
-
-.animate-float {
-  animation: float 5s ease-in-out infinite;
-}
-
-.animate-bounce-slow {
-  animation: bounce-slow 3s ease-in-out infinite;
-}
-
-.perspective-1000 {
-  perspective: 1000px;
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-sans);
 }
