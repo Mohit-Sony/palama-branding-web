@@ -69,5 +69,3 @@ export default function MarketplaceSection() {
     </section>
   );
 }
-
-import Link from "next/link";

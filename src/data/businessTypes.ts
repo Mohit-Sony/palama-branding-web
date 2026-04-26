@@ -270,6 +270,21 @@ export const businessTypesData: Record<string, BusinessTypeData> = {
   "health-practices": {
     slug: "health-practices",
     name: "Health Practices",
+    hero: {
+      title: "The modern platform for private health practices",
+      subtitle: "Simplify scheduling, patient records, and billing in one secure place",
+      cta: "Get started",
+      image: "https://images.unsplash.com/photo-1504813184591-01592fd039e5?auto=format&fit=crop&w=1200&q=80",
+    },
+    professionals: [],
+    trustCards: [],
+    features: [],
+    darkFeatures: [],
+    testimonials: [
+      { quote: "It's changed the way I run my practice. Highly recommended.", author: "Dr. James", image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=100&q=80" },
+      { quote: "The most intuitive software for health professionals.", author: "Sarah L.", image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=100&q=80" },
+    ],
+    faq: commonFaqs,
   },
   "tattooing-piercing": {
     slug: "tattooing-piercing",

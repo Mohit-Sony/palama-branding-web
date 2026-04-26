@@ -381,7 +381,6 @@ export default function BusinessTypeLanding({ data }: Props) {
             <div className="absolute top-1/2 -left-4 sm:-left-12 -translate-y-1/2 z-20">
               <button
                 onClick={prevTestimonial}
-                className="w-16 h-16 rounded-full bg-white border border-gray-100 shadow-xl flex items-center justify-center hover:bg-palama-navy hover:text-white transition-all group"
                 className="w-16 h-16 rounded-full bg-white border border-gray-100 shadow-xl flex items-center justify-center hover:bg-palama-navy hover:text-white transition-all cursor-pointer group"
               >
                 <ChevronLeft className="w-6 h-6" />
